@@ -1,0 +1,18 @@
+{
+    "name": "kouosl/captcha",
+    "description": "Yii2 KouOsl captcha Module Integration",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "yii 2", "captcha", "module", "modules"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Betül KARSLI",
+            "email": "betull.karslii@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "kouosl\\captcha\\": ""
+        }
+    }
+}
