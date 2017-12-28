@@ -5,12 +5,12 @@ namespace kouosl\captcha\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use kouosl\captcha\models\Captchas;
+use kouosl\captcha\models\Verilers;
 
 /**
- * CaptchaSearch represents the model behind the search form about `kouosl\captcha\models\Captchas`.
+ * VerilerSearch represents the model behind the search form about `kouosl\captcha\models\Verilers`.
  */
-class CaptchaSearch extends Captchas
+class VerilerSearch extends Verilers
 {
     /**
      * @inheritdoc
@@ -18,7 +18,8 @@ class CaptchaSearch extends Captchas
     public function rules()
     {
         return [
-            [['ee', 'dsa', 'dsad', 'dsadas'], 'integer'],
+            [['istenen_captcha', 'karakter_sayisi', 'time', 'basari_durumu'], 'integer'],
+            [['captcha_tipi'], 'safe'],
         ];
     }
 
@@ -40,7 +41,7 @@ class CaptchaSearch extends Captchas
      */
     public function search($params)
     {
-        $query = Captchas::find();
+        $query = Verilers::find();
 
         // add conditions that should always apply here
 
@@ -58,11 +59,13 @@ class CaptchaSearch extends Captchas
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'ee' => $this->ee,
-            'dsa' => $this->dsa,
-            'dsad' => $this->dsad,
-            'dsadas' => $this->dsadas,
+            'istenen_captcha' => $this->istenen_captcha,
+            'karakter_sayisi' => $this->karakter_sayisi,
+            'time' => $this->time,
+            'basari_durumu' => $this->basari_durumu,
         ]);
+
+        $query->andFilterWhere(['like', 'captcha_tipi', $this->captcha_tipi]);
 
         return $dataProvider;
     }

@@ -3,7 +3,7 @@
 use yii\db\Schema;
 use yii\db\Migration;
 
-class m130524_201442_Captcha-Do-rulama extends Migration
+class m130524_201442_captcha extends Migration
 {
     public function up()
     {
@@ -13,7 +13,7 @@ class m130524_201442_Captcha-Do-rulama extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%Captcha-Do-rulamas}}', [
+        $this->createTable('{{%captchas}}', [
             'id' => $this->primaryKey(),
             'title' => $this->string(200)->notNull(),
 			'description' => $this->text()->notNull(),

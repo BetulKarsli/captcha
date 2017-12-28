@@ -1,13 +1,13 @@
 <?php
 
-namespace kouosl\sample\controllers\api;
+namespace kouosl\captcha\controllers\api;
 
-use kouosl\sample\models\Samples;
+use kouosl\captcha\models\Captchas;
 use Yii;
 
 class SamplesController extends DefaultController {
 	
-	public $modelClass = 'kouosl\sample\models\Samples';
+	public $modelClass = 'kouosl\captcha\models\Captchas';
 	
 	public function actions() {
 		$actions = parent::actions ();
