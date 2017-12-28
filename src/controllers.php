@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Description of Captcha
  *
- * @author http://www.roytuts.com
+ * 
  */
 class Captcha_Form extends CI_Controller {
 
